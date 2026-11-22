@@ -41,7 +41,6 @@ namespace VanillaRanchingExpanded
 
         public static ThingDef VRE_AnimalGamete;
         public static ThingDef VRE_AnimalTrough;
-        public static ThingDef VRE_Collie;
 
         public static JobDef VRE_HerdAnimal;
         public static JobDef VRE_FleeToPen;
