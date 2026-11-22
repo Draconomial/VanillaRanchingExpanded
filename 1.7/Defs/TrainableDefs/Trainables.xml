@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+    <!-- Keep Herd in the common defs. RimWorld only uses specialTrainables to restrict
+         training by species when Odyssey is active. A race can opt into Herd with
+         trainableTags whether Odyssey is enabled or disabled. -->
     <TrainableDef>
         <defName>VRE_Herd</defName>
         <label>herd</label>
