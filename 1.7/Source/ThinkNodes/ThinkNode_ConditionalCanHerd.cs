@@ -7,11 +7,7 @@ namespace VanillaRanchingExpanded
     {
         protected override bool Satisfied(Pawn pawn)
         {
-            if (ModsConfig.OdysseyActive)
-            {
-                return pawn.training.HasLearned(InternalDefOf.VRE_Herd);
-            }
-            return true;
+            return pawn.training.HasLearned(InternalDefOf.VRE_Herd);
         }
     }
 }
