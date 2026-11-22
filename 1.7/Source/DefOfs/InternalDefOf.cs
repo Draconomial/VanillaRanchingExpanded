@@ -46,7 +46,6 @@ namespace VanillaRanchingExpanded
         public static JobDef VRE_FleeToPen;
         public static JobDef VRE_RefillAnimalTrough;
 
-        [MayRequire("Ludeon.RimWorld.Odyssey")]
         public static TrainableDef VRE_Herd;
     }
 }
