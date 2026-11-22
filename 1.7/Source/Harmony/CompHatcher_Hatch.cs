@@ -1,11 +1,8 @@
 ﻿using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection.Emit;
 using Verse;
-using System;
-using System.Net;
 using VEF.AnimalGenes;
 
 namespace VanillaRanchingExpanded
@@ -17,22 +14,20 @@ namespace VanillaRanchingExpanded
         [HarmonyTranspiler]
         public static IEnumerable<CodeInstruction> MoveGenesFromEggToPawn(IEnumerable<CodeInstruction> codeInstructions)
         {
-            var codes = codeInstructions.ToList();
-            var moveGenesMethod = AccessTools.Method(typeof(VanillaRanchingExpanded_CompHatcher_Hatch_Patch), "MoveGenes");
+            var moveGenesMethod = AccessTools.Method(typeof(VanillaRanchingExpanded_CompHatcher_Hatch_Patch), nameof(MoveGenes));
+            var generatePawn = AccessTools.Method(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn),
+                new[] { typeof(PawnGenerationRequest) });
 
-            for (var i = 0; i < codes.Count; i++)
+            foreach (var instruction in codeInstructions)
             {
-
-                if (codes[i].opcode == OpCodes.Stloc_S && codes[i].operand is LocalBuilder lb && lb.LocalIndex == 8)
+                yield return instruction;
+                if (instruction.Calls(generatePawn))
                 {
-                    yield return codes[i];
-                    yield return new CodeInstruction(OpCodes.Ldloc_S, 8);
+                    // Keep the generated pawn on the stack for the original hatch code.
+                    yield return new CodeInstruction(OpCodes.Dup);
                     yield return new CodeInstruction(OpCodes.Ldarg_0);
                     yield return new CodeInstruction(OpCodes.Call, moveGenesMethod);
                 }
-
-
-                else yield return codes[i];
             }
         }
 
@@ -43,12 +38,8 @@ namespace VanillaRanchingExpanded
             Thing egg = compHatcher.parent;
             if (egg?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes compEgg) { return; }
            
-            comp.genes.Clear();
-
-            foreach (AnimalGeneDef geneDef in compEgg.genes)
-            {
-                AnimalGeneUtility.AddGene(comp, geneDef);
-            }
+            if (compEgg.HasAssignedGenes)
+                comp.SetInheritedGenes(compEgg.genes);
            
         }
 
