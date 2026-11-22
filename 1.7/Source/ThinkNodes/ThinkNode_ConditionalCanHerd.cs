@@ -7,11 +7,9 @@ namespace VanillaRanchingExpanded
     {
         protected override bool Satisfied(Pawn pawn)
         {
-            if (ModsConfig.OdysseyActive)
-            {
-                return pawn.training.HasLearned(InternalDefOf.VRE_Herd);
-            }
-            return true;
+            // RimWorld creates the training tracker conditionally, even for races with training tags.
+            return pawn.def.race.trainableTags?.Contains(InternalDefOf.VRE_Herd.defName) == true
+                && pawn.training?.HasLearned(InternalDefOf.VRE_Herd) == true;
         }
     }
 }

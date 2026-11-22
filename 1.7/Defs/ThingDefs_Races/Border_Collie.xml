@@ -66,9 +66,10 @@
 			<nameOnTameChance>1</nameOnTameChance>
 			<trainability>Advanced</trainability>
 			<nuzzleMtbHours>12</nuzzleMtbHours>
-			<specialTrainables>
-				<li MayRequire="Ludeon.RimWorld.Odyssey">VRE_Herd</li>
-			</specialTrainables>
+
+			<trainableTags>
+				<li>VRE_Herd</li>
+			</trainableTags>
 			<gestationPeriodDays>10</gestationPeriodDays>
 			<canCrossBreedWith>
 				<li>YorkshireTerrier</li>
