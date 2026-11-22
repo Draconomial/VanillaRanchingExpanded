@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <!-- A regular opt-in trainable: specialTrainable only enforces race-specific
-         specialTrainables lists while Odyssey is active. Instead, animal races
-         opt in via <trainableTags><li>VRE_Herd</li></trainableTags>, which the
-         base-game training tracker recognizes with or without Odyssey. -->
     <TrainableDef>
         <defName>VRE_Herd</defName>
         <label>herd</label>
