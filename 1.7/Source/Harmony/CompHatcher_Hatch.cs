@@ -35,8 +35,7 @@ namespace VanillaRanchingExpanded
         {
             if (pawn?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes comp) { return; }
            
-            Thing egg = compHatcher.parent;
-            if (egg?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes compEgg) { return; }
+            if (compHatcher.parent.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes compEgg) { return; }
            
             if (compEgg.HasAssignedGenes)
                 comp.SetInheritedGenes(compEgg.genes);
