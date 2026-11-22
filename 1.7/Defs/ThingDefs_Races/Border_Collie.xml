@@ -67,7 +67,7 @@
 			<trainability>Advanced</trainability>
 			<nuzzleMtbHours>12</nuzzleMtbHours>
 			<specialTrainables>
-				<li>VRE_Herd</li>
+				<li MayRequire="Ludeon.RimWorld.Odyssey">VRE_Herd</li>
 			</specialTrainables>
 			<gestationPeriodDays>10</gestationPeriodDays>
 			<canCrossBreedWith>
