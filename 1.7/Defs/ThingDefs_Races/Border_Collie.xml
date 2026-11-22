@@ -126,6 +126,7 @@
 			<li Class="VEF.AnimalBehaviours.AnimalCrossbreedExtension">
 				<crossBreedKindDef>Random</crossBreedKindDef>
 			</li>
+			<li Class="VanillaRanchingExpanded.HerdingExtension" />
 		</modExtensions>
 	</ThingDef>
 	<PawnKindDef ParentName="AnimalKindBase">
