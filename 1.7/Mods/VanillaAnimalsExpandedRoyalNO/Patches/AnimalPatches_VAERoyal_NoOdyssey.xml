@@ -30,8 +30,7 @@
 		<value>
 			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
-			<li Class="VEF.AnimalGenes.CompProperties_StackByGenes">      
-			</li>
+			<li Class="VanillaRanchingExpanded.CompProperties_GroupedEggGenes" />
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationConditional">
@@ -81,8 +80,7 @@
 		<value>
 			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
-			<li Class="VEF.AnimalGenes.CompProperties_StackByGenes">      
-			</li>
+			<li Class="VanillaRanchingExpanded.CompProperties_GroupedEggGenes" />
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationConditional">
@@ -131,8 +129,7 @@
 		<value>
 			<li Class="VEF.AnimalGenes.CompProperties_AnimalGenes">      
 			</li>
-			<li Class="VEF.AnimalGenes.CompProperties_StackByGenes">      
-			</li>
+			<li Class="VanillaRanchingExpanded.CompProperties_GroupedEggGenes" />
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationConditional">
