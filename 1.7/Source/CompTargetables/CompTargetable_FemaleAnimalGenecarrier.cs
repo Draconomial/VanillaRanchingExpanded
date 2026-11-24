@@ -43,7 +43,7 @@ namespace VanillaRanchingExpanded
                     return false;
                 }
             }
-            if (pawn.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes pawnComp || gamete.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes gameteComp)
+            if (pawn.AnimalGenes is not CompAnimalGenes pawnComp || gamete.AnimalGenes is not CompAnimalGenes gameteComp)
             {
                 return false;
             }

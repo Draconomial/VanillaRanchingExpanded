@@ -11,7 +11,7 @@ namespace VanillaRanchingExpanded
             if (req.HasThing)
             {
                 Pawn pawn = req.Thing as Pawn;
-                if (pawn?.TryGetComp<CompAnimalGenes>() is CompAnimalGenes comp)
+                if (pawn?.AnimalGenes is CompAnimalGenes comp)
                 {
                     val *= GenesFactorsDefined(comp);
                 }
@@ -34,7 +34,7 @@ namespace VanillaRanchingExpanded
             if (req.HasThing)
             {
                 Pawn pawn = req.Thing as Pawn;
-                if (pawn?.TryGetComp<CompAnimalGenes>() is CompAnimalGenes comp)
+                if (pawn?.AnimalGenes is CompAnimalGenes comp)
                 {
 
                     if (GenesFactorsDefined(comp) != 1f)

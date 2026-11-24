@@ -29,7 +29,7 @@ namespace VanillaRanchingExpanded
                     hediff_Pregnant.SetParents(pawn, gamete.gameteFather,null);
                     pawn.health.AddHediff(hediff_Pregnant);
 
-                    hediff_Pregnant.GetComp<HediffComp_GameteGenes>().genes = gamete.GetComp<CompAnimalGenes>().genes.ToList();
+                    hediff_Pregnant.GetComp<HediffComp_GameteGenes>().genes = gamete.AnimalGenes.genes.ToList();
                 }
 
                 user.carryTracker.DestroyCarriedThing();

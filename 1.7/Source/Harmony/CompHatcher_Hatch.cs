@@ -33,9 +33,9 @@ namespace VanillaRanchingExpanded
 
         public static void MoveGenes(Pawn pawn, CompHatcher compHatcher)
         {
-            if (pawn?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes comp) { return; }
+            if (pawn?.AnimalGenes is not CompAnimalGenes comp) { return; }
            
-            if (compHatcher.parent.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes compEgg) { return; }
+            if (compHatcher.parent.AnimalGenes is not CompAnimalGenes compEgg) { return; }
            
             if (compEgg.HasAssignedGenes)
                 comp.SetInheritedGenes(compEgg.genes);

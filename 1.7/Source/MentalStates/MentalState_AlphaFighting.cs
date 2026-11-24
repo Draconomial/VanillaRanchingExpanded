@@ -51,8 +51,8 @@ namespace VanillaRanchingExpanded
 
         public void ResolveAlphaFight(Pawn other)
         {
-            var comp1 = pawn.GetComp<CompAnimalGenes>();
-            var comp2 = other.GetComp<CompAnimalGenes>();
+            var comp1 = pawn.AnimalGenes;
+            var comp2 = other.AnimalGenes;
 
             if ((pawn.Dead || pawn.Downed) && (other.Dead || other.Downed))
             {

@@ -29,7 +29,7 @@ namespace VanillaRanchingExpanded
 
         public override bool ValidateTarget(LocalTargetInfo target, bool showMessages = true)
         {
-            if (target.Thing?.TryGetComp<CompAnimalGenes>() is null)
+            if (target.Thing?.AnimalGenes is null)
             {
                 return false;
             }
