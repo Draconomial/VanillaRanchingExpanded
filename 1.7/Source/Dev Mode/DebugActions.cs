@@ -33,7 +33,7 @@ namespace VanillaRanchingExpanded
                     {
                         foreach (Thing thing in UI.MouseCell().GetThingList(Find.CurrentMap))
                         {
-                            CompAnimalGenes comp = thing.TryGetComp<CompAnimalGenes>();
+                            CompAnimalGenes comp = thing.AnimalGenes;
                             if (comp != null)
                             {
                                 AnimalGeneUtility.AddGeneRespectingFamily(comp, gene);
@@ -58,7 +58,7 @@ namespace VanillaRanchingExpanded
         [DebugAction("VE Ranching", "Remove gene from animal", false, false, false, false, false, 0, false, actionType = DebugActionType.ToolMap, allowedGameStates = AllowedGameStates.PlayingOnMap)]
         private static void RemoveGeneFromAnimal()
         {
-            Thing item= Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where(x => x.TryGetComp<CompAnimalGenes>()!=null)?.First();
+            Thing item= Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).Where(x => x.AnimalGenes !=null)?.First();
             if (item != null)
             {
                 Find.WindowStack.Add(new Dialog_DebugOptionListLister(Options_RemoveGene(item)));
@@ -68,7 +68,7 @@ namespace VanillaRanchingExpanded
         public static List<DebugMenuOption> Options_RemoveGene(Thing thing)
         {
             List<DebugMenuOption> list = new List<DebugMenuOption>();
-            CompAnimalGenes comp = thing.TryGetComp<CompAnimalGenes>();
+            CompAnimalGenes comp = thing.AnimalGenes;
             if (comp != null)
             {
                 foreach (AnimalGeneDef item in comp.genes)

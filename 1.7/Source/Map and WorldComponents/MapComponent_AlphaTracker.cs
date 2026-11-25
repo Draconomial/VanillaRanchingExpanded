@@ -109,7 +109,7 @@ namespace VanillaRanchingExpanded
             var compsByPenFamily = new Dictionary<ThingWithComps, Dictionary<FeratypeFamilyDef, List<(Pawn pawn, CompAnimalGenes comp)>>>();
             foreach (var pawn in map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer))
             {
-                var comp = pawn.GetComp<CompAnimalGenes>();
+                var comp = pawn.AnimalGenes;
                 if (comp == null || comp.feratype == null || !comp.feratype.canBeAlpha || comp.genes.Any(x => x.makeAnimalSterile))
                 {
                     continue;
@@ -334,7 +334,7 @@ namespace VanillaRanchingExpanded
             var males = new List<(Pawn, CompAnimalGenes)>();
             foreach (var p in map.mapPawns.SpawnedPawnsInFaction(Faction.OfPlayer))
             {
-                var comp = p.GetComp<CompAnimalGenes>();
+                var comp = p.AnimalGenes;
                 if (comp == null || comp.feratype == null || !comp.feratype.canBeAlpha || comp.feratype.feratypeFamily != state.family)
                 {
                     continue;

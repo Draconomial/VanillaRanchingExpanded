@@ -126,7 +126,7 @@ public sealed class CompGroupedEggGenes : CompStackByGenes
 
     internal static HatchCursor StartHatch(Thing egg)
     {
-        if (egg.TryGetComp<CompAnimalGenes>() is not { HasAssignedGenes: true } comp)
+        if (egg.AnimalGenes is not CompAnimalGenes { HasAssignedGenes: true } comp)
             return default;
         return new HatchCursor(comp.genes, egg.TryGetComp<CompGroupedEggGenes>()?.groups);
     }

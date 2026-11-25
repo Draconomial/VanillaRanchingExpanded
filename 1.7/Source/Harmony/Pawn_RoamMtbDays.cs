@@ -14,7 +14,7 @@ namespace VanillaRanchingExpanded
         [HarmonyPostfix]
         public static void ModifyRoamInterval(Pawn __instance, ref float? __result)
         {
-            if (__instance.TryGetComp<CompAnimalGenes>()!=null)
+            if (__instance.AnimalGenes !=null)
             {
                 __result *= __instance.GetStatValue(InternalDefOf.VRE_RoamMTBFactor, cacheStaleAfterTicks: 60);
             }

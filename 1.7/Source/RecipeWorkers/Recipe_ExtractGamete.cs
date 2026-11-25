@@ -21,7 +21,7 @@ namespace VanillaRanchingExpanded
                 return false;
             }
 
-            if (pawn.TryGetComp<CompAnimalGenes>() is null)
+            if (pawn.AnimalGenes is null)
             {
                 return "VRE_NotACompatibleAnimal".Translate();
             }
@@ -55,8 +55,8 @@ namespace VanillaRanchingExpanded
         {
             AnimalGamete thing = ThingMaker.MakeThing(InternalDefOf.VRE_AnimalGamete) as AnimalGamete;
             thing.gameteFather = pawn;
-            CompAnimalGenes pawnComp = pawn.TryGetComp<CompAnimalGenes>();
-            CompAnimalGenes gameteComp = thing.TryGetComp<CompAnimalGenes>();
+            CompAnimalGenes pawnComp = pawn.AnimalGenes;
+            CompAnimalGenes gameteComp = thing.AnimalGenes;
             if (pawnComp != null && gameteComp != null) { 
                 gameteComp.genes = pawnComp.genes.ToList();
                 gameteComp.feratype = pawnComp.feratype;

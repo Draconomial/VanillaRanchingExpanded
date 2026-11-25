@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 using System.Reflection.Emit;
@@ -44,7 +44,7 @@ namespace VanillaRanchingExpanded
         private static void MoveNextEggGenes(Pawn pawn, ref CompGroupedEggGenes.HatchCursor cursor)
         {
             var genes = cursor.TakeNext();
-            if (genes != null && pawn?.TryGetComp<CompAnimalGenes>() is { } comp)
+            if (genes != null && pawn?.AnimalGenes is CompAnimalGenes comp)
                 comp.SetInheritedGenes(genes);
         }
 

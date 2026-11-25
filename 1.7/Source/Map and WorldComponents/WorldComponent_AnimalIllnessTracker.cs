@@ -57,7 +57,7 @@ namespace VanillaRanchingExpanded
             {
                 if (pawn == null || pawn.Dead || pawn.Destroyed || !pawn.IsColonyAnimal ||
                     !checkedAnimals.Add(pawn)) continue;
-                CompAnimalGenes comp = pawn.TryGetComp<CompAnimalGenes>();
+                CompAnimalGenes comp = pawn.AnimalGenes;
                 if (comp != null)
                 {
                     AnimalGeneDef illnessGene = comp.genes?.FirstOrDefault(gene => gene.isIllnessGene);

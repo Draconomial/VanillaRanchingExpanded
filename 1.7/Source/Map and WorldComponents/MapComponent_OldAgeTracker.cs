@@ -21,7 +21,7 @@ namespace VanillaRanchingExpanded
             {
                 foreach (var item in PawnsFinder.AllMapsWorldAndTemporary_AliveOrDead)
                 {
-                    if (item?.TryGetComp<CompAnimalGenes>() is not CompAnimalGenes comp) continue;
+                    if (item?.AnimalGenes is not CompAnimalGenes comp) continue;
                     if (item is Pawn pawn)
                     {
                         float currentAge = pawn.ageTracker.AgeBiologicalYearsFloat;
