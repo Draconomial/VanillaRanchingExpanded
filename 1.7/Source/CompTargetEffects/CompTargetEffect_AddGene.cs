@@ -26,7 +26,7 @@ namespace VanillaRanchingExpanded
                 {
                     AnimalGeneDef gene = kit.animalGene;
                    
-                    CompAnimalGenes comp = target.TryGetComp<CompAnimalGenes>();
+                    CompAnimalGenes comp = target.AnimalGenes;
                     if (comp != null) {
                         AnimalGeneUtility.AddGeneRespectingFamily(comp, gene);
                     }

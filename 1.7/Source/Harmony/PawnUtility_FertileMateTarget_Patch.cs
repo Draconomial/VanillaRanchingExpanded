@@ -12,7 +12,7 @@ namespace VanillaRanchingExpanded
         {
             if (__result && male.Faction == Faction.OfPlayer)
             {
-                var comp = male.GetComp<CompAnimalGenes>();
+                var comp = male.AnimalGenes;
                 if (comp?.feratype != null && comp.feratype.canBeAlpha)
                 {
                     if (!comp.isAlpha)
